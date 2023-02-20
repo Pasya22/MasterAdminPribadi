@@ -47,6 +47,36 @@ export default function SidebarMaster() {
             </span>
           </Link>
         </li>
+        <li>
+          <Link href="/master/cagro">
+            <span
+              className={`px-3 py-2 block hover:bg-gray-700 ${activeMenu === '/master/cagro' ? 'text-white' : 'text-gray-400'}`}
+              onClick={() => handleMenuClick('/master/cagro')}
+            >
+              Category Group
+            </span>
+          </Link>
+        </li>
+        <li>
+          <Link href="/master/prit">
+            <span
+              className={`px-3 py-2 block hover:bg-gray-700 ${activeMenu === '/master/prit' ? 'text-white' : 'text-gray-400'}`}
+              onClick={() => handleMenuClick('/master/prit')}
+            >
+              Price Items
+            </span>
+          </Link>
+        </li>
+        <li>
+          <Link href="/master/serviceTask">
+            <span
+              className={`px-3 py-2 block hover:bg-gray-700 ${activeMenu === '/master/sserviceTask' ? 'text-white' : 'text-gray-400'}`}
+              onClick={() => handleMenuClick('/master/serviceTask')}
+            >
+              Service Task
+            </span>
+          </Link>
+        </li>
       </ul>
       {/* </nav> */}
     </Sider>
