@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
@@ -32,7 +32,9 @@ export default function Navbar() {
         setAnchorEl(null);
     };
     const [activeMenu, setActiveMenu] = useState('/master/location');
-
+    const handleMenuClick = (path: SetStateAction<string>) => {
+        setActiveMenu(path);
+    };
 
 
     return (
@@ -126,27 +128,25 @@ export default function Navbar() {
                         <i className="fa fa-bars"></i>
                     </button>
                     <Breadcrumbs aria-label="breadcrumb" separator={<span style={{ color: 'white' }}>›</span>}>
-                        {activeMenu === '/master' && (
-                            <Link
-                                underline="hover"
-                                sx={{ display: 'flex', alignItems: 'center' }}
-                                color="white"
-                                href="/master/"
-                            >
-                                <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-                                Master
-                            </Link>
-                        )}
-                        {activeMenu === '/master/location' && (
-                            <Link
-                                underline="hover"
-                                sx={{ display: 'flex', alignItems: 'center' }}
-                                color="white"
-                                href="/master/location/"
-                            >
-                                Location
-                            </Link>
-                        )}
+                        <Link
+                            underline="hover"
+                            sx={{ display: 'flex', alignItems: 'center' }}
+                            color="white"
+                            href="/master/"
+                        >
+                            <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                            Master
+                        </Link>
+
+                        <Link
+                            underline="hover"
+                            sx={{ display: 'flex', alignItems: 'center' }}
+                            color="white"
+                            href="/master/location/"
+                        >
+                            Location
+                        </Link>
+
                         {/* <Typography
                             sx={{ display: 'flex', alignItems: 'center' }}
                             color="white"
@@ -155,7 +155,7 @@ export default function Navbar() {
                         </Typography> */}
                     </Breadcrumbs>
                 </div>
-                <div>
+                <div >
                     <button className="text-white hover:text-gray-400 focus:outline-none">
                         <i className="fa fa-bell"></i>
                     </button>
