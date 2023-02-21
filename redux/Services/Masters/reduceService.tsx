@@ -92,6 +92,102 @@ const remove2 = async (id: number) => {
     }
 }
 
+// ====== prov ====//
+const getAll3 = async () => {
+    try {
+        const result: any = await axios.get("/provinces");
+        return result;
+    } catch (error: any) {
+        return error.message;
+    }
+}
+
+const getId3 = async (id: number) => {
+    try {
+        const result: any = await axios.get(`/provinces/${id}`);
+        return result;
+    } catch (error: any) {
+        return error.message;
+    }
+}
+
+const create3 = async (data: any) => {
+    try {
+        const result: any = await axios.post("/provinces/save/", data);
+        return result;
+    } catch (error: any) {
+        return error.message;
+    }
+}
+
+const update3 = async (data: any) => {
+    const id = parseInt(data.userId);
+    try {
+        const result: any = await axios.put(`/provinces/update/${id}`, data);
+        return result;
+    } catch (error: any) {
+        return error.message;
+    }
+}
+
+const remove3 = async (id: number) => {
+    try {
+        const result: any = await axios.delete(`/provinces/delete/${id}`);
+        return result;
+    } catch (error: any) {
+        return error.message;
+    }
+}
+
+
+// addr
+const getAll4 = async () => {
+    try {
+        const result: any = await axios.get("/address");
+        return result;
+    } catch (error: any) {
+        return error.message;
+    }
+}
+
+const getId4 = async (id: number) => {
+    try {
+        const result: any = await axios.get(`/address/${id}`);
+        return result;
+    } catch (error: any) {
+        return error.message;
+    }
+}
+
+const create4 = async (data: any) => {
+    try {
+        const result: any = await axios.post("/address/save/", data);
+        return result;
+    } catch (error: any) {
+        return error.message;
+    }
+}
+
+const update4 = async (data: any) => {
+    const id = parseInt(data.userId);
+    try {
+        const result: any = await axios.put(`/address/update/${id}`, data);
+        return result;
+    } catch (error: any) {
+        return error.message;
+    }
+}
+
+const remove4 = async (id: number) => {
+    try {
+        const result: any = await axios.delete(`/address/delete/${id}`);
+        return result;
+    } catch (error: any) {
+        return error.message;
+    }
+}
+
+
 // const login = async (data: any) => {
 //     try {
 //         const result: any = await axios.post("auth/login", data);
@@ -131,6 +227,21 @@ const ReduceService: any = {
     create2,
     update2,
     remove2,
+
+    // === prov ===//
+    getAll3,
+    getId3,
+    create3,
+    update3,
+    remove3,
+
+    // ==== addr
+    getAll4,
+    getId4,
+    create4,
+    update4,
+    remove4,
+
     // updatePhoto,
     // login,
     // register

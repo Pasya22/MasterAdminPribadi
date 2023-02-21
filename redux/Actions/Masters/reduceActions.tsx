@@ -179,3 +179,183 @@ export const doDeleteCountryFailed: any = (payload: any): any => {
     }
 }
 
+
+
+// ======== prov =======//
+export const doProvRequest: any = (): any => {
+    return {
+        type: ActionMasterType.GET_PROV
+    }
+}
+
+export const doProvRequestSucceed: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.GET_PROV_SUCCEED,
+        payload
+    }
+}
+
+export const doProvRequestFailed: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.GET_PROV_SUCCEED,
+        payload
+    }
+}
+
+export const doProvCreate: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.ADD_PROV,
+        payload
+    }
+}
+
+export function doAddProvSucceed(payload: any): any {
+    return {
+        type: ActionMasterType.ADD_PROV_SUCCEED,
+        payload
+    }
+
+}
+
+export const doAddProvFailed: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.ADD_PROV_FAILED,
+        payload
+    }
+}
+
+export const doUpdateProv: any = (id: number, payload: any): any => {
+    return {
+        type: ActionMasterType.UPDATE_PROV,
+        id,
+        payload
+    }
+}
+
+export const doUpdateProvSucceed: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.UPDATE_PROV_SUCCEED,
+        payload
+    }
+}
+
+
+export const doUpdateProvFailed: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.UPDATE_PROV_FAILED,
+        payload
+    }
+}
+
+
+export const doDeleteProv: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.DEL_PROV,
+        payload
+    }
+}
+
+export const doDeleteProvSucceed: any = (payload: any): any => {
+    console.info(payload)
+    return {
+        type: ActionMasterType.DEL_PROV_SUCCEED,
+        payload
+    }
+}
+
+export const doDeleteProvFailed: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.DEL_PROV_FAILED,
+        payload
+    }
+}
+
+
+// === addr
+export const doAddrRequest: any = (): any => {
+    return {
+        type: ActionMasterType.GET_ADDR
+    }
+}
+
+export const doAddrRequestSucceed: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.GET_ADDR_SUCCEED,
+        payload
+    }
+}
+
+export const doAddrRequestFailed: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.GET_ADDR_SUCCEED,
+        payload
+    }
+}
+
+export const doAddrCreate: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.ADD_ADDR,
+        payload
+    }
+}
+
+export function doAddAddrSucceed(payload: any): any {
+    return {
+        type: ActionMasterType.ADD_ADDR_SUCCEED,
+        payload
+    }
+
+}
+
+export const doAddAddrFailed: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.ADD_ADDR_FAILED,
+        payload
+    }
+}
+
+export const doUpdateAddr: any = (id: number, payload: any): any => {
+    return {
+        type: ActionMasterType.UPDATE_ADDR,
+        id,
+        payload
+    }
+}
+
+export const doUpdateAddrSucceed: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.UPDATE_ADDR_SUCCEED,
+        payload
+    }
+}
+
+
+export const doUpdateAddrFailed: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.UPDATE_ADDR_FAILED,
+        payload
+    }
+}
+
+
+export const doDeleteAddr: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.DEL_ADDR,
+        payload
+    }
+}
+
+export const doDeleteAddrSucceed: any = (payload: any): any => {
+    console.info(payload)
+    return {
+        type: ActionMasterType.DEL_ADDR_SUCCEED,
+        payload
+    }
+}
+
+export const doDeleteAddrFailed: any = (payload: any): any => {
+    return {
+        type: ActionMasterType.DEL_ADDR_FAILED,
+        payload
+    }
+}

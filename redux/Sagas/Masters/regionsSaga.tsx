@@ -9,6 +9,7 @@ import {
     doUpdateRegionsSucceed,
     doRegionsRequestFailed,
     doRegionsRequestSucceed,
+
     doCountryRequestSucceed,
     doAddCountryFailed,
     doAddCountrySucceed,
@@ -16,7 +17,31 @@ import {
     doUpdateCountryFailed,
     doDeleteCountryFailed,
     doDeleteCountrySucceed,
-    doCountryRequestFailed
+    doCountryRequestFailed,
+
+    doProvRequestSucceed,
+    doAddProvFailed,
+    doAddProvSucceed,
+    doUpdateProvSucceed,
+    doUpdateProvFailed,
+    doDeleteProvFailed,
+    doDeleteProvSucceed,
+    doProvRequestFailed,
+
+    doAddrRequestSucceed,
+    doAddAddrFailed,
+    doAddAddrSucceed,
+    doUpdateAddrSucceed,
+    doUpdateAddrFailed,
+    doDeleteAddrFailed,
+    doDeleteAddrSucceed,
+    doAddrRequestFailed,
+
+
+
+
+
+
 } from '../../Actions/Masters/reduceActions';
 
 
@@ -102,7 +127,87 @@ function* handleDelCountry(action: any): any {
     }
 }
 
+// ======== prov ====== //
+function* handleProv(): any {
+    try {
+        const result: any = yield call(ReduceService.getAll3);
+        yield put(doProvRequestSucceed(result.data));
+    }
+    catch (error: any) {
+        yield put(doProvRequestFailed(error));
+    }
+}
+function* handleAddProv(action: any): any {
+    try {
+        const result = yield call(ReduceService.create3, action.payload);
+        yield put(doAddProvSucceed(result.data));
+    }
+    catch (error: any) {
+        yield put(doAddProvFailed(error));
+    }
+}
 
+function* handleUpdateProv(action: any): any {
+    try {
+        const result = yield call(ReduceService.update3, action.payload);
+        yield put(doUpdateProvSucceed(result));
+    }
+    catch (error: any) {
+        yield put(doUpdateProvFailed(error));
+    }
+}
+
+
+function* handleDelProv(action: any): any {
+    try {
+        const result = yield call(ReduceService.remove3, action.payload);
+        yield put(doDeleteProvSucceed(action.payload));
+    }
+    catch (error: any) {
+        yield put(doDeleteProvFailed(error));
+    }
+}
+
+// ADDR
+function* handleAddr(): any {
+    try {
+        const result: any = yield call(ReduceService.getAll4);
+        yield put(doAddrRequestSucceed(result.data));
+    }
+    catch (error: any) {
+        yield put(doAddrRequestFailed(error));
+    }
+}
+function* handleAddAddr(action: any): any {
+    try {
+        const result = yield call(ReduceService.create4, action.payload);
+        yield put(doAddAddrSucceed(result.data));
+    }
+    catch (error: any) {
+        yield put(doAddAddrFailed(error));
+    }
+}
+
+function* handleUpdateAddr(action: any): any {
+    try {
+        const result = yield call(ReduceService.update4, action.payload);
+        yield put(doUpdateAddrSucceed(result));
+    }
+    catch (error: any) {
+        yield put(doUpdateAddrFailed(error));
+    }
+}
+
+
+function* handleDelAddr(action: any): any {
+    try {
+        const result = yield call(ReduceService.remove4, action.payload);
+        yield put(doDeleteAddrSucceed(action.payload));
+    }
+    catch (error: any) {
+        yield put(doDeleteAddrFailed(error));
+    }
+}
 
 
 
@@ -111,8 +216,24 @@ export {
     handleAddRegions,
     handleDelRegions,
     handleUpdateRegions,
+
     handleCountry,
     handleAddCountry,
     handleDelCountry,
-    handleUpdateCountry
+    handleUpdateCountry,
+
+    handleProv,
+    handleAddProv,
+    handleDelProv,
+    handleUpdateProv,
+
+    handleAddr,
+    handleAddAddr,
+    handleDelAddr,
+    handleUpdateAddr,
+
+
+
+
+
 }

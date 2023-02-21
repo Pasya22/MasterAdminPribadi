@@ -1,7 +1,30 @@
 import { all, takeEvery } from "redux-saga/effects";
 import ActionType from "../Constant/Users/ActionType";
 import ActionMasterType from "../Constant/Masters/ActionType";
-import { handleRegions, handleAddRegions, handleUpdateRegions, handleDelRegions, handleCountry, handleAddCountry ,handleUpdateCountry,handleDelCountry} from "./Masters/regionsSaga";
+import {
+    handleRegions,
+    handleAddRegions,
+    handleUpdateRegions,
+    handleDelRegions,
+
+    handleCountry,
+    handleAddCountry,
+    handleUpdateCountry,
+    handleDelCountry,
+
+
+    handleProv,
+    handleAddProv,
+    handleDelProv,
+    handleUpdateProv,
+    
+    handleAddr,
+    handleAddAddr,
+    handleDelAddr,
+    handleUpdateAddr,
+
+
+} from "./Masters/regionsSaga";
 import { handleAddUsers, handleDelUsers, handleLoginUsers, handleRegisterUsers, handleUpdatePhotoUsers, handleUpdateUsers, handleUser, handleUsers } from "./Users/usersSaga";
 
 function* watchAll(): any {
@@ -18,8 +41,23 @@ function* watchAll(): any {
         takeEvery(ActionMasterType.UPDATE_COUNTRY, handleUpdateCountry),
         takeEvery(ActionMasterType.DEL_COUNTRY, handleDelCountry),
 
+        // ========== prov ================== //
+        takeEvery(ActionMasterType.GET_PROV, handleProv),
+        takeEvery(ActionMasterType.ADD_PROV, handleAddProv),
+        takeEvery(ActionMasterType.UPDATE_PROV, handleUpdateProv),
+        takeEvery(ActionMasterType.DEL_PROV, handleDelProv),
+        
+        takeEvery(ActionMasterType.GET_ADDR, handleAddr),
+        takeEvery(ActionMasterType.ADD_ADDR, handleAddAddr),
+        takeEvery(ActionMasterType.UPDATE_ADDR, handleUpdateAddr),
+        takeEvery(ActionMasterType.DEL_ADDR, handleDelAddr),
 
 
+
+
+
+
+        
         //Users
         takeEvery(ActionType.GET_USERS, handleUsers),
         takeEvery(ActionType.GET_USER, handleUser),

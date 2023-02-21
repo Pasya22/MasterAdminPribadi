@@ -23,7 +23,7 @@ export default function SidebarMaster() {
   return (
 
 
-    <><Sider style={{ backgroundColor: 'gray' }} width={200} className="h-screen ">
+    <><Sider style={{ position: 'fixed',backgroundColor: 'gray', width: '100%', height: '100%' }} className="h-screen">
       <h4 className="font-semibold ml-3" style={{ fontFamily: 'sans-serif' }}>MENU</h4>
       {/* <nav className="sidebar"> */}
       <ul>
